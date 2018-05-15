@@ -20,7 +20,8 @@ def insert_md():
     i=1
     for i in range(1,max):
         md_example_name = sheet1.cell(i, 0).value
-        file = open(md_url + md_example_name + '.md', 'w')
+        md_url_file='%s%s.md'%(md_url,md_example_name)
+        file = open(md_url_file, 'w')
         file.write('<br/><h3>用例编号:')
         file.write('<br/>')
         file.write(sheet1.cell(i, 1).value)
@@ -42,9 +43,18 @@ def insert_md():
         file.write('<br/><h3>预期结果:')
         file.write('<br/>')
         file.write(sheet1.cell(i, 6).value)
-        file.write('<br/><h3>设计人:')
+        file.write('<br/><h3>测试结果:')
         file.write('<br/>')
         file.write(sheet1.cell(i, 7).value)
+        file.write('<br/><h3>设计人:')
+        file.write('<br/>')
+        file.write(sheet1.cell(i, 8).value)
+        file.write('<br/><h3>修改日期:')
+        file.write('<br/>')
+        file.write(sheet1.cell(i, 9).value)
+        file.write('<br/><h3>备注:')
+        file.write('<br/>')
+        file.write(sheet1.cell(i, 10).value)
         file.close()
 
 print(sheet1.cell(1,0).value)
