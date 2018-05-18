@@ -6,8 +6,13 @@ import xlrd
 import os
 import string
 
+<<<<<<< HEAD
 excel_url =r'C:\test\test.xlsx'
 md_url='C:\\test\\'
+=======
+excel_url =r'c:\test\test.xlsx'
+md_url='c:\\test\\'
+>>>>>>> ec0b3cd20d59f6cabe278eaa5951120beebc7cec
 
 workbook = xlrd.open_workbook(excel_url)
 print(workbook.sheet_names())
