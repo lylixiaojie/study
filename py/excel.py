@@ -17,7 +17,11 @@ sheet1 = workbook.sheet_by_index(0)
 print('有',sheet1.nrows , '列')
 print('有',sheet1.ncols ,'行')
 def insert_md():
+<<<<<<< HEAD
     max=sheet1.nrows
+=======
+    max=sheet1.nrows-1
+>>>>>>> cb9f8ba1cbeb27bb603fc01cfc5312cc208ddccb
     for i in range(1,max):
         try:
             md_example_name = sheet1.cell(i, 0).value
