@@ -10,6 +10,6 @@ def go():
     return do
 
 
-for i in range(1,100000):
+for i in range(1,1000000):
     go()
 
