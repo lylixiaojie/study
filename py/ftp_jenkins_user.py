@@ -31,9 +31,11 @@ def ftp_login():
 def ftp_rename(oldname, newname):
     try:
         ftp_login().rename(oldname, newname)
+        print('update' + oldname)
     except:
-        print("can't update")
-        print(oldname)
+        print('')
+
+
 
 
 
