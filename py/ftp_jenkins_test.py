@@ -30,28 +30,26 @@ def ftp_login():
         print("I don't know")
 
 def ftp_rename(oldname, newname):
-    x = 0
-    y = 0
-    z = 0
-    for x in range(len(name_qudao)-1):
-        for y in range(len(name_package)-1):
-            for z in range(len(name_icon)-1):
+    for x in range(0,len(name_qudao)):
+        for y in range(0,len(name_package)):
+            for z in range(0,len(name_icon)):
+                ftp_oldname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + oldname
+                ftp_newname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + newname
                 try:
-                    ftp_oldname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + oldname
-                    ftp_newname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + newname
-                    ftp_path_rename = ftp_login().rename(ftp_oldname, ftp_newname)
-                    return ftp_path_rename
-                except IOError:
+                    ftp_path = ftp_login().rename(ftp_oldname, ftp_newname)
+                    return ftp_path
+                except IOError as error:
                     print("can't update")
+                    print(error)
                     print(ftp_oldname)
                     continue
                 else:
                     print("I don't know")
                     print(ftp_oldname)
                     continue
-            z=z+1
-        y=y+1
-    x=x+1
+                #z=z+1
+            #y=y+1
+        #x=x+1
 
 
 ftp_login()
