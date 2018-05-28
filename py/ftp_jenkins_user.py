@@ -31,10 +31,9 @@ def ftp_login():
 def ftp_rename(oldname, newname):
     try:
         ftp_login().rename(oldname, newname)
-    except IOError as error:
+    except:
         print("can't update")
-        print(error)
-        print(ftp_oldname)
+        print(oldname)
 
 
 
@@ -44,9 +43,9 @@ ftp_oldname = input('please input oldname:')
 #ftp_oldname='new.txt'
 ftp_newname= input('please input newname:')
 
-for x in range(0, len(name_qudao)-1):
-    for y in range(0, len(name_package)-1):
-        for z in range(0, len(name_icon)-1):
+for x in range(0, len(name_qudao)):
+    for y in range(0, len(name_package)):
+        for z in range(0, len(name_icon)):
             ftp_oldname_user = mulu + name_qudao[x] + name_package[y] + name_icon[z] + ftp_oldname
             ftp_newname_user = mulu + name_qudao[x] + name_package[y] + name_icon[z] + ftp_newname
             ftp_rename(ftp_oldname_user, ftp_newname_user)
