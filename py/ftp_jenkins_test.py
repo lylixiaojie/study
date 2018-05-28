@@ -24,10 +24,9 @@ def ftp_login():
         link_ftp = ftplib.FTP(host)
         link_ftp.login(username, passwd)
         return link_ftp
-    except IOError:
+    except:
         print("can't login")
-    else:
-        print("I don't know")
+
 
 def ftp_rename(oldname, newname):
     for x in range(0,len(name_qudao)):
@@ -36,20 +35,12 @@ def ftp_rename(oldname, newname):
                 ftp_oldname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + oldname
                 ftp_newname = mulu + name_qudao[x] + name_package[y] + name_icon[z] + newname
                 try:
-                    ftp_path = ftp_login().rename(ftp_oldname, ftp_newname)
-                    return ftp_path
-                except IOError as error:
+                    ftp_login().rename(ftp_oldname, ftp_newname)
+                    print('update'+ftp_oldname)
+
+                except :
                     print("can't update")
-                    print(error)
-                    print(ftp_oldname)
-                    continue
-                else:
-                    print("I don't know")
-                    print(ftp_oldname)
-                    continue
-                #z=z+1
-            #y=y+1
-        #x=x+1
+
 
 
 ftp_login()
