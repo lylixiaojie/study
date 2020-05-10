@@ -7,7 +7,7 @@ from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 # 创建AcsClient实例
 client = AcsClient(
    "LTAIdOeNUsex6nKM", 
-   "LzNG4NFO2Rsp9AmSApwdJvjU4JgDYZ",
+   "",
    "cn-beijing"
 );
 # 创建request，并设置参数
